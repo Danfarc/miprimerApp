@@ -1,0 +1,19 @@
+<p>Nombre del emprelado: {{nombre}}</p>
+<p>Apellido del emprelado: {{apellido}}</p>
+<p>Edad del emprelado: {{edad<18 ? "Menor de edad":"Mayor de edad"}}</p>
+<p>Empresa del emprelado: {{empresa.value}}</p>
+Introduce la empresa: <input type="text" #empresa (keyup)="0" [disabled]="habilitarCuadro"/>
+
+<br/>
+<!--<input type="button" value="Dale"  (click)="llamaEmpresa(empresa.value)"/>-->
+{{textDeRegistro}}
+<br>
+Registrado: <input type="radio" value="Si" name="nRegistro" id="nRegistro" [checked]="usuRegistrado" (click)="setUsuarioRegistrado($event)"/>
+<br>
+No Registrado: <input type="radio" value="No" name="nRegistro" (click)="setUsuarioRegistrado($event)">
+{{getRegistroUsuario()}}
+
+
+<p>Empresa del emprelado: {{empresa2}}</p>
+<!--Introduce la empresa: <input type="text" (input)="cambiarEmpresa2($event)"/>-->
+Introduce la empresa: <input type="text" [(ngModel)]="empresa2"/>
