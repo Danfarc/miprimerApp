@@ -1,0 +1,45 @@
+<div class="container-fluid !direction !spacing">
+ <h1>Directivas</h1>
+ <form class="row g-3 needs-validation" novalidate>
+   <div class="col-md-4">
+     <label for="validationCustom01" class="form-label">Nombre</label>
+     <input type="text" class="form-control" id="validationCustom01" name="nombre" [(ngModel)]="nombre"  required>
+     <div class="valid-feedback">
+       Looks good!
+     </div>
+   </div>
+   <div class="col-md-4">
+     <label for="validationCustom02" class="form-label">Apellido</label>
+     <input type="text" class="form-control" id="validationCustom02" name="apellido" [(ngModel)]="apellido" required>
+     <div class="valid-feedback">
+       Looks good!
+     </div>
+   </div>
+   <div class="col-md-4">
+    <label for="validationCustom02" class="form-label">Cargo</label>
+    <input type="text" class="form-control" id="validationCustom02" name="cargo" [(ngModel)]="cargo" required>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+  </div>
+   <div class="col-12">
+     <button class="btn btn-primary" type="submit" (click)="registrarUsuario()" >Registrar</button>
+   </div>
+ </form>
+ <br>
+ <div *ngIf="registrado; else sinRegistrar" class="text-sm-left lh-base font-normal text-none text-decoration-none text-reset">
+ {{mensaje}} con el nombre {{nombre}} y apellido {{apellido}}
+ y tiene el cargo de <span [ngStyle]="{color: cargo=='director'?'red':'black'}">{{cargo}} </span>  <span [ngClass]="{paraDirectores: cargo=='director'}">{{cargo}}</span>
+ </div>
+ <ng-template #sinRegistrar>
+   nadie registrado
+ </ng-template>
+
+ <ul>
+  <li *ngFor="let entrada of entradas; index as i; first as isFirst">
+    {{i+1}}/{{entradas.length}}.{{entrada.titulo}} <span *ngIf="isFirst">default</span>
+
+  </li>
+ </ul>
+</div>
+

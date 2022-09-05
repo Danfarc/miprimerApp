@@ -7,13 +7,15 @@ import { EmpleadosComponent } from './empleados/empleados.component';
 import { EmpleadoComponent } from './empleado/empleado.component';
 import { FormsModule } from '@angular/forms';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
+import { DirectivasComponent } from './directivas/directivas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmpleadosComponent,
     EmpleadoComponent,
-    CalculadoraComponent
+    CalculadoraComponent,
+    DirectivasComponent
   ],
   imports: [
     BrowserModule,
